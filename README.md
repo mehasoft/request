@@ -1,16 +1,16 @@
 # @mehasoft/request
 
-@mehasoft/request, Next.js, React ve Expo uygulamalarında kullanılmak üzere basit bir HTTP istemcisidir. Dinamik olarak ortam değişkenlerini kullanarak backend URL'sini belirler.
+@mehasoft/request is a simple HTTP client designed for use in Next.js, React, and Expo applications. It dynamically determines the backend URL based on environment variables.
 
-## 🚀 Kurulum
+## 🚀 Installation
 
 ```bash
 npm i @mehasoft/request
 ```
 
-## 🛠 Kullanım
+## 🛠 Usage
 
-### 📌 GET İsteği Gönderme
+### 📌 Sending a GET Request
 
 ```javascript
 import { get } from "@mehasoft/request";
@@ -20,7 +20,7 @@ get({ endpoint: "users" })
   .catch(error => console.error(error));
 ```
 
-### 📌 POST İsteği Gönderme
+### 📌 Sending a POST Request
 
 ```javascript
 import { post } from "@mehasoft/request";
@@ -33,18 +33,18 @@ post({
   .catch(error => console.error(error));
 ```
 
-## 🌍 Ortam Değişkenleri
+## 🌍 Environment Variables
 
-Bu paket, çalışma ortamına göre otomatik olarak uygun **backend URL**'sini kullanır.
+This package automatically selects the appropriate **backend URL** based on the runtime environment.
 
-| Ortam   | Değişken |
-|---------|---------------------------|
-| Next.js | `NEXT_PUBLIC_BACKEND_URL` |
-| Expo    | `EXPO_PUBLIC_BACKEND_URL` |
-| React   | `REACT_APP_BACKEND_URL`   |
-| Diğer   | `BACKEND_URL` (Varsayılan) |
+| Environment | Variable |
+|------------|---------------------------|
+| Next.js    | `NEXT_PUBLIC_BACKEND_URL` |
+| Expo       | `EXPO_PUBLIC_BACKEND_URL` |
+| React      | `REACT_APP_BACKEND_URL`   |
+| Others     | `BACKEND_URL` (Default)   |
 
-Örnek `.env` dosyası:
+Example `.env` file:
 
 ```ini
 NEXT_PUBLIC_BACKEND_URL=https://next-backend.example.com
@@ -53,33 +53,33 @@ REACT_APP_BACKEND_URL=https://react-backend.example.com
 BACKEND_URL=https://default-backend.example.com
 ```
 
-## 📌 API Seçenekleri
+## 📌 API Options
 
-Her fonksiyonun aldığı parametreler:
+Each function accepts the following parameters:
 
 ### `get({ endpoint, bearerToken, api, customUrl })`
 
-| Parametre    | Açıklama |
-|-------------|----------|
-| `endpoint`  | API endpoint'i |
-| `bearerToken` | (Opsiyonel) Bearer token ile yetkilendirme |
-| `api`       | (Varsayılan: `true`) `/api` prefix'ini ekleyip eklemeyeceği |
-| `customUrl` | (Opsiyonel) Özel URL kullanımı |
+| Parameter    | Description |
+|-------------|------------|
+| `endpoint`  | API endpoint |
+| `bearerToken` | (Optional) Authorization using Bearer token |
+| `api`       | (Default: `true`) Whether to prefix with `/api` |
+| `customUrl` | (Optional) Use a custom URL |
 
 ### `post({ endpoint, body, bearerToken, csrfToken, customUrl, api })`
 
-| Parametre    | Açıklama |
-|-------------|----------|
-| `endpoint`  | API endpoint'i |
-| `body`      | (Opsiyonel) Gönderilecek JSON verisi |
-| `bearerToken` | (Opsiyonel) Bearer token ile yetkilendirme |
-| `csrfToken` | (Opsiyonel) CSRF token gönderme |
-| `customUrl` | (Opsiyonel) Özel URL kullanımı |
-| `api`       | (Varsayılan: `true`) `/api` prefix'ini ekleyip eklemeyeceği |
+| Parameter    | Description |
+|-------------|------------|
+| `endpoint`  | API endpoint |
+| `body`      | (Optional) JSON data to be sent |
+| `bearerToken` | (Optional) Authorization using Bearer token |
+| `csrfToken` | (Optional) Send CSRF token |
+| `customUrl` | (Optional) Use a custom URL |
+| `api`       | (Default: `true`) Whether to prefix with `/api` |
 
-## 📜 Lisans
+## 📜 License
 
-MIT Lisansı altında sunulmaktadır.
+This package is provided under the MIT License.
 
 ---
-Bu kütüphane, **@mehasoft** tarafından geliştirilmiştir. 🚀
+This library is developed by **@mehasoft**. 🚀
