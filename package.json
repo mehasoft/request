@@ -4,6 +4,7 @@
   "description": "A lightweight and environment-aware HTTP client for modern JavaScript apps including Next.js, React, and Expo.",
   "main": "src/index.js",
   "type": "module",
+  "types": "index.d.ts",
   "exports": {
     ".": {
       "import": "./src/index.js"
