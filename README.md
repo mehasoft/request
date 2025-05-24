@@ -10,27 +10,90 @@ npm i @mehasoft/request
 
 ## 🛠 Usage
 
-### 📌 Sending a GET Request
+### 📌 Sending a GET Request (async/await)
 
 ```javascript
 import { get } from "@mehasoft/request";
 
-get({ endpoint: "users" })
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+async function fetchUsers() {
+  try {
+    const response = await get({ endpoint: "users" });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
 ```
 
-### 📌 Sending a POST Request
+### 📌 Sending a POST Request (async/await)
 
 ```javascript
 import { post } from "@mehasoft/request";
 
-post({
-  endpoint: "login",
-  body: { email: "test@example.com", password: "123456" },
-})
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+async function loginUser() {
+  try {
+    const response = await post({
+      endpoint: "login",
+      body: { email: "test@example.com", password: "123456" },
+    });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+### 📌 Sending a PUT Request (async/await)
+
+```javascript
+import { put } from "@mehasoft/request";
+
+async function updateUser() {
+  try {
+    const response = await put({
+      endpoint: "users/1",
+      body: { name: "Updated Name" },
+    });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+### 📌 Sending a PATCH Request (async/await)
+
+```javascript
+import { patch } from "@mehasoft/request";
+
+async function partiallyUpdateUser() {
+  try {
+    const response = await patch({
+      endpoint: "users/1",
+      body: { email: "new@example.com" },
+    });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+### 📌 Sending a DELETE Request (async/await)
+
+```javascript
+import { del } from "@mehasoft/request";
+
+async function deleteUser() {
+  try {
+    const response = await del({
+      endpoint: "users/1"
+    });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
 ```
 
 ## 🌍 Environment Variables
@@ -82,4 +145,5 @@ Each function accepts the following parameters:
 This package is provided under the MIT License.
 
 ---
+
 This library is developed by **@mehasoft**. 🚀
