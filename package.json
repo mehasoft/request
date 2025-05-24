@@ -1,18 +1,53 @@
 {
   "name": "@mehasoft/request",
-  "version": "1.1.1",
-  "description": "Basit bir HTTP request kütüphanesi",
+  "version": "1.1.2",
+  "description": "A lightweight and environment-aware HTTP client for modern JavaScript apps including Next.js, React, and Expo.",
   "main": "src/index.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js"
+    }
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "README.tr.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests specified. Coming soon!\" && exit 0",
+    "lint": "echo \"No linter defined. Add ESLint or similar for code quality.\" && exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mehasoft/request"
+    "url": "git+https://github.com/mehasoft/request.git"
   },
-  "keywords": ["http", "request", "fetch", "api"],
-  "author": "Mehasoft",
+  "keywords": [
+    "http",
+    "request",
+    "fetch",
+    "api",
+    "rest",
+    "nextjs",
+    "react",
+    "expo",
+    "client",
+    "utility"
+  ],
+  "author": "Mehasoft <info@mehasoft.com>",
   "license": "MIT",
-  "dependencies": {}
+  "bugs": {
+    "url": "https://github.com/mehasoft/request/issues"
+  },
+  "homepage": "https://github.com/mehasoft/request#readme",
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {},
+  "directories": {
+    "lib": "src",
+    "doc": "docs",
+    "example": "examples"
+  }
 }
